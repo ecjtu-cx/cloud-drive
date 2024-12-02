@@ -2,6 +2,7 @@
 #define THREADPOOL_H
 
 #include <iostream>
+#include "taskQueue.h"
 
 class ThreadPool {
    public:
