@@ -2,14 +2,15 @@
 #define THREADPOOL_H
 
 #include <iostream>
+
 #include "taskQueue.h"
 #include "worker.h"
 
 class ThreadPool {
    public:
-    ThreadPool(int workerNum);  // 线程池构造函数
-    ~ThreadPool();              // 线程池析构函数
-    int makeWorker();           // 创建工人函数
+    ThreadPool(int workerNum);                // 线程池构造函数
+    ~ThreadPool();                            // 线程池析构函数
+    int makeWorker();  // 创建工人函数
    public:
     worker tidArr;          // 记录所有的子线程信息
     TaskQueue taskQueue;    // 任务队列

@@ -1,0 +1,263 @@
+chengxi@hexi:~/Cloud-Drive$ cd server
+chengxi@hexi:~/Cloud-Drive/server$ cd build
+chengxi@hexi:~/Cloud-Drive/server/build$ cmake ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at CMakeLists.txt:10 (add_library):
+  add_library cannot create target "CloudDriveServer" because another target
+  with the same name already exists.  The existing target is an executable
+  created in source directory "/home/chengxi/Cloud-Drive/server".  See
+  documentation for policy CMP0002 for more details.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/chengxi/Cloud-Drive/server/build/CMakeFiles/CMakeOutput.log".
+chengxi@hexi:~/Cloud-Drive/server/build$ make
+make: *** No targets specified and no makefile found.  Stop.
+chengxi@hexi:~/Cloud-Drive/server/build$ build
+Command 'build' not found, did you mean:
+  command 'pbuild' from deb pbuilder-scripts (22)
+  command 'buildd' from deb buildd (0.81.2ubuntu6)
+  command 'guild' from deb guile-2.2-dev (2.2.7+1-6build2)
+  command 'guild' from deb guile-3.0-dev (3.0.7-1)
+  command 'obuild' from deb ocaml-obuild (0.1.10-3build1)
+  command 'sbuild' from deb sbuild (0.81.2ubuntu6)
+  command 'xbuild' from deb mono-xbuild (6.8.0.105+dfsg-3.2)
+Try: sudo apt install <deb name>
+chengxi@hexi:~/Cloud-Drive/server/build$ make
+make: *** No targets specified and no makefile found.  Stop.
+chengxi@hexi:~/Cloud-Drive/server/build$ make .
+make: Nothing to be done for '.'.
+chengxi@hexi:~/Cloud-Drive/server/build$ rm * -r
+chengxi@hexi:~/Cloud-Drive/server/build$ ls
+chengxi@hexi:~/Cloud-Drive/server/build$ cmake 
+Usage
+
+  cmake [options] <path-to-source>
+  cmake [options] <path-to-existing-build>
+  cmake [options] -S <path-to-source> -B <path-to-build>
+
+Specify a source directory to (re-)generate a build system for it in the
+current working directory.  Specify an existing build directory to
+re-generate its build system.
+
+Run 'cmake --help' for more information.
+
+chengxi@hexi:~/Cloud-Drive/server/build$ cmake ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at CMakeLists.txt:10 (add_library):
+  add_library cannot create target "CloudDriveServer" because another target
+  with the same name already exists.  The existing target is an executable
+  created in source directory "/home/chengxi/Cloud-Drive/server".  See
+  documentation for policy CMP0002 for more details.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/chengxi/Cloud-Drive/server/build/CMakeFiles/CMakeOutput.log".
+chengxi@hexi:~/Cloud-Drive/server/build$ rm * -r
+chengxi@hexi:~/Cloud-Drive/server/build$ cmake ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+CMake Error at CMakeLists.txt:10 (add_library):
+  Cannot find source file:
+
+    fmt::fmt
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+
+CMake Error at CMakeLists.txt:10 (add_library):
+  No SOURCES given to target: CloudDriveServerLib
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+chengxi@hexi:~/Cloud-Drive/server/build$ rm * -r
+chengxi@hexi:~/Cloud-Drive/server/build$ cmake ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+CMake Error at CMakeLists.txt:10 (add_library):
+  Cannot find source file:
+
+    fmt::fmt
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+
+CMake Error at CMakeLists.txt:10 (add_library):
+  No SOURCES given to target: CloudDriveServerLib
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+chengxi@hexi:~/Cloud-Drive/server/build$ cmake ..
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/chengxi/Cloud-Drive/server/build
+chengxi@hexi:~/Cloud-Drive/server/build$ make
+[ 20%] Building CXX object CMakeFiles/CloudDriveServer.dir/main.cpp.o
+/home/chengxi/Cloud-Drive/server/main.cpp:9:10: fatal error: checkError.h: No such file or directory
+    9 | #include "checkError.h"
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [CMakeFiles/CloudDriveServer.dir/build.make:76: CMakeFiles/CloudDriveServer.dir/main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/CloudDriveServer.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2
+chengxi@hexi:~/Cloud-Drive/server/build$ rm * -r
+chengxi@hexi:~/Cloud-Drive/server/build$ cmake ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/chengxi/Cloud-Drive/server/build
+chengxi@hexi:~/Cloud-Drive/server/build$ make
+[ 50%] Building CXX object CMakeFiles/CloudDriveServer.dir/main.cpp.o
+In file included from /home/chengxi/Cloud-Drive/server/main.cpp:12:
+/home/chengxi/Cloud-Drive/server/./ThreadPool/include/threadPool.h:15:15: error: declaration of ‘taskQueue ThreadPool::taskQueue’ changes meaning of ‘taskQueue’ [-fpermissive]
+   15 |     taskQueue taskQueue;    // 任务队列
+      |               ^~~~~~~~~
+In file included from /home/chengxi/Cloud-Drive/server/./ThreadPool/include/threadPool.h:5,
+                 from /home/chengxi/Cloud-Drive/server/main.cpp:12:
+/home/chengxi/Cloud-Drive/server/./ThreadPool/include/taskQueue.h:11:7: note: ‘taskQueue’ declared here as ‘class taskQueue’
+   11 | class taskQueue {
+      |       ^~~~~~~~~
+make[2]: *** [CMakeFiles/CloudDriveServer.dir/build.make:76: CMakeFiles/CloudDriveServer.dir/main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/CloudDriveServer.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2
+chengxi@hexi:~/Cloud-Drive/server/build$ rm * -r
+chengxi@hexi:~/Cloud-Drive/server/build$ cmake ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/chengxi/Cloud-Drive/server/build
+chengxi@hexi:~/Cloud-Drive/server/build$ make
+[ 50%] Building CXX object CMakeFiles/CloudDriveServer.dir/main.cpp.o
+[100%] Linking CXX executable CloudDriveServer
+/usr/bin/ld: CMakeFiles/CloudDriveServer.dir/main.cpp.o: in function `main':
+/home/chengxi/Cloud-Drive/server/main.cpp:35: undefined reference to `ThreadPool::ThreadPool(int)'
+/usr/bin/ld: /home/chengxi/Cloud-Drive/server/main.cpp:36: undefined reference to `ThreadPool::makeWorker()'
+/usr/bin/ld: /home/chengxi/Cloud-Drive/server/main.cpp:39: undefined reference to `tcpInit(char const*, char const*, int*)'
+/usr/bin/ld: /home/chengxi/Cloud-Drive/server/main.cpp:42: undefined reference to `epollAdd(int, int)'
+/usr/bin/ld: /home/chengxi/Cloud-Drive/server/main.cpp:43: undefined reference to `epollAdd(int, int)'
+/usr/bin/ld: /home/chengxi/Cloud-Drive/server/main.cpp:54: undefined reference to `TaskQueue::enQueue(int)'
+/usr/bin/ld: /home/chengxi/Cloud-Drive/server/main.cpp:75: undefined reference to `ThreadPool::~ThreadPool()'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/CloudDriveServer.dir/build.make:98: CloudDriveServer] Error 1
+make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/CloudDriveServer.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2
+chengxi@hexi:~/Cloud-Drive/server/build$ rm * -r
+chengxi@hexi:~/Cloud-Drive/server/build$ cmake ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/chengxi/Cloud-Drive/server/build
+chengxi@hexi:~/Cloud-Drive/server/build$ make
+[ 12%] Building CXX object CMakeFiles/CloudDriveServer.dir/main.cpp.o
+[ 25%] Building CXX object CMakeFiles/CloudDriveServer.dir/QuickTool/src/epoll.cpp.o
+[ 37%] Building CXX object CMakeFiles/CloudDriveServer.dir/QuickTool/src/tcpInit.cpp.o
+[ 50%] Building CXX object CMakeFiles/CloudDriveServer.dir/QuickTool/src/transFile.cpp.o
+In file included from /home/chengxi/Cloud-Drive/server/QuickTool/src/transFile.cpp:1:
+/home/chengxi/Cloud-Drive/server/./QuickTool/include/transFile.h:14:8: warning: extra tokens at end of #endif directive [-Wendif-labels]
+   14 | #endif _TRANSFILE_H_  // _TRANSFILE_H_
+      |        ^~~~~~~~~~~~~
+[ 62%] Building CXX object CMakeFiles/CloudDriveServer.dir/ThreadPool/src/taskQueue.cpp.o
+[ 75%] Building CXX object CMakeFiles/CloudDriveServer.dir/ThreadPool/src/threadPool.cpp.o
+[ 87%] Building CXX object CMakeFiles/CloudDriveServer.dir/ThreadPool/src/worker.cpp.o
+[100%] Linking CXX executable CloudDriveServer
+[100%] Built target CloudDriveServer
+chengxi@hexi:~/Cloud-Drive/server/build$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.27.151.209  netmask 255.255.240.0  broadcast 172.27.159.255
+        inet6 fe80::215:5dff:fe91:afe0  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:91:af:e0  txqueuelen 1000  (Ethernet)
+        RX packets 23007  bytes 23279233 (23.2 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 10840  bytes 13861741 (13.8 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 83109  bytes 148781049 (148.7 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 83109  bytes 148781049 (148.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+chengxi@hexi:~/Cloud-Drive/server/build$ ./CloudDriveServer 172.27.151.209 1234 4
+^C

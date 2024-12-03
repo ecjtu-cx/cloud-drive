@@ -974,7 +974,6 @@ CMakeFiles/CloudDriveServer.dir/ThreadPool/src/threadPool.cpp.o: ../ThreadPool/s
   /usr/include/c++/11/bits/istream.tcc \
   ../ThreadPool/include/taskQueue.h \
   ../ThreadPool/include/worker.h \
-  ../ThreadPool/include/worker.h \
   /usr/include/fmt/color.h \
   /usr/include/fmt/format.h \
   /usr/include/c++/11/cmath \
@@ -1033,7 +1032,8 @@ CMakeFiles/CloudDriveServer.dir/ThreadPool/src/threadPool.cpp.o: ../ThreadPool/s
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/include/c++/11/iterator \
-  /usr/include/c++/11/bits/stream_iterator.h
+  /usr/include/c++/11/bits/stream_iterator.h \
+  ../ThreadPool/include/worker.h
 
 CMakeFiles/CloudDriveServer.dir/ThreadPool/src/worker.cpp.o: ../ThreadPool/src/worker.cpp \
   /usr/include/stdc-predef.h \

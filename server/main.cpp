@@ -42,31 +42,33 @@ int main(int argc, char* argv[]) {
     epollAdd(epfd, sockfd);
     epollAdd(epfd, exitPipe[0]);
 
-    while(1){
+    while (1) {
         struct epoll_event readySet[1024];
         int readyNum = epoll_wait(epfd, readySet, 1024, -1);
-        for(int i = 0; i < readyNum; ++ i){
-            if(readySet[i].data.fd == sockfd){
+        for (int i = 0; i < readyNum; ++i) {
+            if (readySet[i].data.fd == sockfd) {
                 int netfd = accept(sockfd, NULL, NULL);
                 fmt::print(fmt::fg(fmt::color::green), "I got a task\n");
                 // 分配任务
                 pthread_mutex_lock(&threadPool.mutex);
                 threadPool.taskQueue.enQueue(netfd);
-                fmt::print(fmt::fg(fmt::color::green), "I am master, I send a netfd {}\n", netfd);
+                fmt::print(fmt::fg(fmt::color::green),
+                           "I am master, I send a netfd {}\n", netfd);
                 pthread_cond_signal(&threadPool.cond);
                 pthread_mutex_unlock(&threadPool.mutex);
-            }
-            else if(readySet[i].data.fd == exitPipe[0]){
+            } else if (readySet[i].data.fd == exitPipe[0]) {
                 // 线程池收到信号
-                fmt::print(fmt::fg(fmt::color::green_yellow), "treadPool is going to exit!\n");
+                fmt::print(fmt::fg(fmt::color::green_yellow),
+                           "treadPool is going to exit!\n");
                 pthread_mutex_lock(&threadPool.mutex);
                 threadPool.exitFlag = 1;
                 pthread_cond_broadcast(&threadPool.cond);
                 pthread_mutex_unlock(&threadPool.mutex);
-                for(int j = 0; j < threadPool.tidArr.workerNum; ++j){
+                for (int j = 0; j < threadPool.tidArr.workerNum; ++j) {
                     pthread_join(threadPool.tidArr.threadArr[j], NULL);
                 }
-                fmt::print(fmt::fg(fmt::color::yellow), "main thread is going to exit!\n");
+                fmt::print(fmt::fg(fmt::color::yellow),
+                           "main thread is going to exit!\n");
                 exit(0);
             }
         }

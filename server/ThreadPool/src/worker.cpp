@@ -7,8 +7,8 @@
 #include "transFile.h"
 // 工人构造函数
 worker::worker(int workerNum){
-    workerNum = workerNum;
-    threadArr = new pthread_t[workerNum];
+    this->workerNum = workerNum;
+    this->threadArr = new pthread_t[workerNum];
 }
 // 工人析构函数
 worker::~worker(){
@@ -17,6 +17,7 @@ worker::~worker(){
 // 工人工作函数
 void * worker::threadFunc(void * arg){
     ThreadPool * pThreadPool = (ThreadPool *) arg;
+    fmt::print(fmt::fg(fmt::color::green), "Thread {} is created\n", pthread_self());
     while(1){
         fmt::print(fmt::fg(fmt::color::green), "Thread {} is waiting for task\n", pthread_self());
         pthread_mutex_lock(&pThreadPool->mutex);
