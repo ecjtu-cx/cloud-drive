@@ -2,18 +2,18 @@
 #include <fmt/core.h>
 #include <fmt/color.h>
 // 构造任务队列函数
-taskQueue::taskQueue() {
+TaskQueue::TaskQueue() {
     pFront = pRear = nullptr;
     queueSize = 0;
 }
 // 析构任务队列函数
-taskQueue::~taskQueue() {
+TaskQueue::~TaskQueue() {
     while(queueSize > 0){
         deQueue();
     }
 }
 // 任务入队函数
-int taskQueue::enQueue(int netfd){
+int TaskQueue::enQueue(int netfd){
     node_t * pNew = new node_t;
     pNew->netfd = netfd;
     pNew->pNext = nullptr;
@@ -27,7 +27,7 @@ int taskQueue::enQueue(int netfd){
     return 0;
 }
 // 任务出队函数
-int taskQueue::deQueue(){
+int TaskQueue::deQueue(){
     if(queueSize == 0){
         fmt::print(fmt::fg(fmt::color::red), "Task queue is empty!\n");
         return -1;

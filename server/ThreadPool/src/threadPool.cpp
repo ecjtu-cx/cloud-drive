@@ -1,6 +1,7 @@
 #include "threadPool.h"
 
 #include "worker.h"
+#include <fmt/color.h>
 
 // 线程池构造函数
 ThreadPool::ThreadPool(int workerNum) : tidArr(workerNum) {
@@ -16,7 +17,10 @@ ThreadPool::~ThreadPool() {
 // 创建工人函数
 int ThreadPool::makeWorker(){
     for(int i = 0; i < tidArr.workerNum; i++){
-        pthread_create(&tidArr.threadArr[i], NULL, tidArr.threadFunc, (void*)this);
+        int ret = pthread_create(&tidArr.threadArr[i], NULL, tidArr.threadFunc, (void*)this);
+        if (ret != 0) {
+            fmt::print(fmt::fg(fmt::color::red), "Failed to create thread {}\n", i);
+        }
     }
     return 0;
 }

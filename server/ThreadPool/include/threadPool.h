@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "taskQueue.h"
+#include "worker.h"
 
 class ThreadPool {
    public:
@@ -11,7 +12,7 @@ class ThreadPool {
     int makeWorker();           // 创建工人函数
    public:
     worker tidArr;          // 记录所有的子线程信息
-    taskQueue taskQueue;    // 任务队列
+    TaskQueue taskQueue;    // 任务队列
     pthread_mutex_t mutex;  // 锁
     pthread_cond_t cond;    // 条件变量
     int exitFlag;           // 线程池是否销毁

@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
         exit(0);
     }
 
-    // 子进程创建线程
+    // 子进程创建线程池
     close(exitPipe[1]);
     ThreadPool threadPool(atoi(argv[3]));
     threadPool.makeWorker();
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
                 // 分配任务
                 pthread_mutex_lock(&threadPool.mutex);
                 threadPool.taskQueue.enQueue(netfd);
-                fmt::print(fmt::fg(fmt::color::green), "I am master, I send a netfd {}", netfd);
+                fmt::print(fmt::fg(fmt::color::green), "I am master, I send a netfd {}\n", netfd);
                 pthread_cond_signal(&threadPool.cond);
                 pthread_mutex_unlock(&threadPool.mutex);
             }
@@ -62,8 +62,14 @@ int main(int argc, char* argv[]) {
                 pthread_mutex_lock(&threadPool.mutex);
                 threadPool.exitFlag = 1;
                 pthread_cond_broadcast(&threadPool.cond);
-                
+                pthread_mutex_unlock(&threadPool.mutex);
+                for(int j = 0; j < threadPool.tidArr.workerNum; ++j){
+                    pthread_join(threadPool.tidArr.threadArr[j], NULL);
+                }
+                fmt::print(fmt::fg(fmt::color::yellow), "main thread is going to exit!\n");
+                exit(0);
             }
         }
     }
+    return 0;
 }

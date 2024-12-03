@@ -1,0 +1,3 @@
+/home/chengxi/Cloud-Drive/server/build/CMakeFiles/CloudDriveServer.dir
+/home/chengxi/Cloud-Drive/server/build/CMakeFiles/edit_cache.dir
+/home/chengxi/Cloud-Drive/server/build/CMakeFiles/rebuild_cache.dir

@@ -1,10 +1,21 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(CloudDriveServer)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_BUILD_TYPE Debug)
+find_package(fmt REQUIRED)
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+include_directories(
+    ./ThreadPool/include
+    ./QuickTool/include
+)
+file(GLOB_RECURSE source
+    ./ThreadPool/src/*.*
+    ./QuickTool/src/*.*
+)
+add_executable(CloudDriveServer ./main.cpp ${source})
 
-include_directories(${PROJECT_SOURCE_DIR}/ThreadPool/include)
-file(GLOB SOURCES ${PROJECT_SOURCE_DIR}/ThreadPool/src/*.cpp)
-
-add_executable(CloudDriveServer ${SOURCES})
-
-add_library(CloudDriveServer fmt::fmt)
+target_link_libraries(CloudDriveServer fmt::fmt)

@@ -8,10 +8,10 @@ typedef struct node_s {
     struct node_s* pNext;
 } node_t;
 
-class taskQueue {
+class TaskQueue {
    public:
-    taskQueue();             // 构造任务队列函数
-    ~taskQueue();            // 析构任务队列函数
+    TaskQueue();             // 构造任务队列函数
+    ~TaskQueue();            // 析构任务队列函数
     int enQueue(int netfd);  // 任务入队函数
     int deQueue();           // 任务出队函数
    public:
